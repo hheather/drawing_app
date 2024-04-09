@@ -1,0 +1,89 @@
+/* CSS files add styling rules to your content */
+
+body {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    margin: 2em;
+  }
+  
+  h1 {
+    color: #222;
+    font-size: 1rem;
+  }
+  
+  canvas {
+    width: 256px;
+    height: 256px;
+    border:1px solid #eaeaea;
+  }
+  
+  a,
+  a:hover {
+    color: #222;
+  }
+  
+  #myImage {
+    width: 258px;
+    height: 258px;
+    border:1px solid #eaeaea;
+  }
+  
+  .flex-row {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .input-port {
+    padding-left: 30px;
+  }
+  
+  .input-port__field {
+    width: 40px;
+    height: 30px;
+    background-color: rgba(0,0,0,0.04);
+    padding: 3px 9px;
+    border: none;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 16px;
+    font-family: 'Consolas', monospace;
+  }
+  
+  .label {
+    text-transform: uppercase;
+    color: #222;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.1rem;
+    margin-right: 4px;
+    height: 14px;
+  }
+  
+  .credits,
+  .credits a {
+    font-size: 0.9rem;
+    color: #6b6b6b;
+  }
+  
+  .credits a:hover {
+    color: #222;
+  }
+  
+  p {
+    color: rgba(0,0,0,0.8)
+  }
+  
+  hr {
+    border: none;
+    max-width: 15rem;
+    border-top: 1px solid #eaeaea;
+    margin-left: 0;
+    margin: 2rem 0;
+  }
+  
+  h2 {
+    font-size: 1rem;
+  }
