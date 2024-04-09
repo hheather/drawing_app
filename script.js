@@ -28,9 +28,8 @@ port.onkeyup = function() {
 // Create a Paper.js Path to draw a line into it:
 var path = new Path();
 
-// draw with mouse
-tool.minDistance = 0.8;
-tool.maxDistance = 1.1;
+tool.minDistance = 1.2;
+tool.maxDistance = 2.1;
 
 var raster;
 var imageLayer = new Layer();
@@ -66,8 +65,6 @@ clearBtn.addEventListener("click", resetWorkspace);
 var exampleBtn = document.getElementById("exampleBtn");
 exampleBtn.addEventListener("click", showExample)
 
-var segment, hitpath;
-var movePath = false;
 
 function onMouseDown(event) {
   path = new Path();
@@ -76,8 +73,6 @@ function onMouseDown(event) {
   path.add(event.point);
   pathsLayer.addChild(path);
 }
-
-var startPoint, endPoint;
 
 function onMouseDrag(event) {
   var step = event.delta / 2;
@@ -94,7 +89,7 @@ function onMouseDrag(event) {
 function onMouseUp(event) {
   path.add(event.point);
   path.closed = true;
-  //path.smooth();
+  path.smooth();
   imageLayer.sendToBack();
 }
 
@@ -111,7 +106,6 @@ function predict() {
     }
   }
   
-  // Construct request elements
   var request = window.superagent;
   // var Url = 'http://localhost:8001/query';
   var Url = 'http://localhost:' + defaultPort + '/generate'
@@ -119,7 +113,6 @@ function predict() {
     'input_image': imageAsBase64
   };
   
-  // Request a prediction to Runway's Pix2Pix HTTP service
   request
     .post(Url)
     .send(payload)
