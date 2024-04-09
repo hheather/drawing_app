@@ -7,7 +7,7 @@ function addBackgroundRect() {
   rect = new Path.Rectangle({
     point: [0, 0],
     size: [view.size.width, view.size.height],
-    fillColor: '#000',
+    fillColor: '#fff',
     locked: true,
   });
   rect.sendToBack();
@@ -29,8 +29,8 @@ port.onkeyup = function() {
 var path = new Path();
 
 // draw with mouse
-tool.minDistance = 10;
-tool.maxDistance = 40;
+tool.minDistance = 0.8;
+tool.maxDistance = 1.1;
 
 var raster;
 var imageLayer = new Layer();
@@ -48,7 +48,7 @@ function resetWorkspace() {
 function showExample() {
   project.clear();
   var img = new Image();
-  img.src = 'images/seg.png'
+  img.src = 'images/example.png'
   var ctx = canvas.getContext('2d');
   img.onload = function () {
     ctx.drawImage(img, 0, 0);
@@ -71,7 +71,7 @@ var movePath = false;
 
 function onMouseDown(event) {
   path = new Path();
-  path.fillColor = 'white';
+  path.fillColor = 'black';
 
   path.add(event.point);
   pathsLayer.addChild(path);
